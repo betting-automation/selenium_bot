@@ -3,10 +3,13 @@ import random
 import zipfile
 import json
 from random_user_agent.user_agent import UserAgent
-from random_user_agent.params import SoftwareName, OperatingSystem
+from random_user_agent.params import SoftwareName, OperatingSystem, HardwareType
 from selenium import webdriver
 
 operating_systems = [OperatingSystem.WINDOWS.value, OperatingSystem.LINUX.value, OperatingSystem.MAC.value]
+hardware_types = [
+    HardwareType.COMPUTER.value
+]
 
 
 def get_chromedriver(proxy, CHROME_DRIVER_PATH):
@@ -68,7 +71,7 @@ def get_chromedriver(proxy, CHROME_DRIVER_PATH):
     """ % (PROXY_HOST, PROXY_PORT, PROXY_USER, PROXY_PASS)
     path = os.path.dirname(os.path.abspath(__file__))
     chrome_options = webdriver.ChromeOptions()
-    user_agent_rotator = UserAgent(operating_systems=operating_systems, limit=100)
+    user_agent_rotator = UserAgent(operating_systems=operating_systems, hardware_types=hardware_types, limit=100)
     userAgent = user_agent_rotator.get_random_user_agent()
 
     print('User agent:', userAgent)
