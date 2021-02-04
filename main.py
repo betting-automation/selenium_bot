@@ -8,5 +8,5 @@ if __name__ == '__main__':
         proxy = data['PROXY']
         CHROME_DRIVER_PATH = data['CHROMEDRIVER_PATH']
         get_chromedriver(proxy=proxy, CHROME_DRIVER_PATH=CHROME_DRIVER_PATH)
-        input('Please press enter on CMD or terminal to close the browser, or you can also simply close the CMD or Terminal:: ')
+        input('Please press enter on CMD or terminal to close the browser, or you can also simply close the CMD or Terminal::\n\n\n\n\n\n\n ')
         print('Closing Browser')
