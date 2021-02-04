@@ -6,7 +6,6 @@ import json
 from selenium import webdriver
 from latest_user_agents import get_latest_user_agents, get_random_user_agent
 
-
 def get_chromedriver(proxy, CHROME_DRIVER_PATH):
     PROXY_HOST = proxy.split('@')[1].split(':')[0]
     PROXY_PORT = proxy.split('@')[1].split(':')[1]
@@ -106,7 +105,7 @@ def get_chromedriver(proxy, CHROME_DRIVER_PATH):
             zp.writestr("background.js", background_js)
         chrome_options.add_extension(pluginfile)
 
-    driver = webdriver.Chrome(CHROME_DRIVER_PATH, chrome_options=chrome_options, service_log_path='/dev/null')
+    driver = webdriver.Chrome(CHROME_DRIVER_PATH, chrome_options=chrome_options)
     driver.execute_cdp_cmd("Page.addScriptToEvaluateOnNewDocument", {
         "source": """
         Object.defineProperty(navigator, 'webdriver', {
