@@ -144,8 +144,6 @@ dmypy.json
 .pytype/
 
 # We dont want to push .json , .log  as they are temporary files and can be big sometimes
-bookie_bashing_data.json
-*.json
 *.zip
 server_logs*
 # Created by https://www.toptal.com/developers/gitignore/api/django
