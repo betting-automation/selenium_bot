@@ -10,6 +10,7 @@ operating_systems = [OperatingSystem.WINDOWS.value, OperatingSystem.LINUX.value,
 hardware_types = [
     HardwareType.COMPUTER.value
 ]
+software_names = [SoftwareName.CHROME.value, SoftwareName.CHROMIUM.value, SoftwareName.FIREFOX.value]
 
 
 def get_chromedriver(proxy, CHROME_DRIVER_PATH):
@@ -71,7 +72,7 @@ def get_chromedriver(proxy, CHROME_DRIVER_PATH):
     """ % (PROXY_HOST, PROXY_PORT, PROXY_USER, PROXY_PASS)
     path = os.path.dirname(os.path.abspath(__file__))
     chrome_options = webdriver.ChromeOptions()
-    user_agent_rotator = UserAgent(operating_systems=operating_systems, hardware_types=hardware_types, limit=100)
+    user_agent_rotator = UserAgent(operating_systems=operating_systems, hardware_types=hardware_types, software_names=software_names, limit=100)
     userAgent = user_agent_rotator.get_random_user_agent()
 
     print('User agent:', userAgent)
