@@ -75,7 +75,7 @@ def get_chromedriver(proxy, CHROME_DRIVER_PATH):
     chrome_options.add_argument('--disable-browser-side-navigation')
     chrome_options.add_argument('--disable-gpu')
     chrome_options.add_experimental_option('prefs', {'intl.accept_languages': 'en,en_GB'})
-    chrome_options.add_argument('--lang=es')
+    chrome_options.add_argument('--lang=en-US')
 
     chrome_options.add_argument('--disable-setuid-sandbox')
     chrome_options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36")
